@@ -1,0 +1,37 @@
+openapi: 3.0.3
+info:
+  title: STD24047
+  description: This is a specification of STD 24047
+  version: "1.0.0"
+
+servers:
+  - url: http://localhost:8000
+
+paths: {}
+
+components:
+  schemas:
+    Phone:
+      type: object
+      properties:
+        identifier:
+          type: string
+          example: "phn-001"
+        brand:
+          type: string
+          example: "Samsung"
+        model:
+          type: string
+          example: "Galaxy S24"
+        characteristic:
+          $ref: '#/components/schemas/Characteristic'
+
+    Characteristic:
+      type: object
+      properties:
+        ram_memory:
+          type: integer
+          example: 8
+        rom_memory:
+          type: integer
+          example: 128
